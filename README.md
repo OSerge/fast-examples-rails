@@ -44,4 +44,3 @@ https://circleci.com/gh/wallarm/fast-examples-rails/
 In previous versions could be vary key principles which are used to integrate FAST with ci/cd processes.
 Please read releases page.
 
-TestCI
