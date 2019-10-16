@@ -39,10 +39,10 @@ jobs:
           command: |
             docker-compose up -d fast selenium \
             && sleep 5 \
-            && docker-compose run --name app-test --service-ports app-test bundle exec rspec spec/features/posts_spec.rb
+            && docker-compose run --name app-test --service-ports app-test bundle exec rspec spec/features/posts_spec.rb && docker-compose down
 
       - run:
           name: Run security tests
           command: |
             docker-compose ps && docker-compose up -d app-test \
-            && docker-compose run --name fast -e CI_MODE=testing -e TEST_RUN_URI=http://app-test:3000 fast
+            && docker-compose run --name fast -e CI_MODE=testing -e TEST_RUN_URI=http://app-test:3000 fast && docker-compose ps
