@@ -45,4 +45,4 @@ jobs:
           name: Run security tests
           command: |
             docker-compose ps && docker-compose up -d app-test \
-            && docker-compose run --name fast -e CI_MODE=testing -e TEST_RUN_URI=http://app-test:3000 fast && docker-compose ps
+            && docker-compose run -e CI_MODE=testing -e TEST_RUN_URI=http://app-test:3000 fast && sleep 5 && docker-compose ps
